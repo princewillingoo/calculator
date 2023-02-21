@@ -24,6 +24,7 @@ pipeline {
                     reportName: "JaCoCo Report"
                     ])
                 sh "./gradlew jacocoTestCoverageVerification"
+                sh "uptime"
             }
         }
     }
