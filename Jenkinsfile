@@ -1,5 +1,9 @@
 pipeline {
-    docker { label 'docker-agent' }
+    agent{
+        docker { 
+            label 'docker-agent' 
+        }
+    }    
     tools{
         jdk "JDK17"
         gradle "Gradle8"
