@@ -1,13 +1,13 @@
 pipeline {
     agent{
-        docker { 
-            label 'docker-agent' 
-        }
-    }    
+        docker { label 'docker-agent' }
+    }
+
     tools{
         jdk "JDK17"
         gradle "Gradle8"
     }
+    
     stages {
         // stage("Compile") {
         //     steps {
