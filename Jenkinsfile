@@ -47,6 +47,11 @@ pipeline {
                 sh "docker build -t princewillingoo/calculator ."
             }
         }
+        stage("Docker Push"){
+            steps {
+                sh "docker push princewillingoo/calculator"
+            }
+        }
     }
 }
 
