@@ -44,9 +44,14 @@ pipeline {
         }
         stage("Docker build") {
             steps {
-                sh "pwd"
-                sh "cat ~/cky.txt | docker login --username princewillingoo --password-stdin"
                 sh "docker build -t princewillingoo/calculator ."
+            }
+        }
+
+        stage("Acceptance test") {
+            steps {
+                sleep 60
+                sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
             }
         }
     }
