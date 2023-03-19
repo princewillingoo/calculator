@@ -49,16 +49,6 @@ pipeline {
                 sh "docker build -t princewillingoo/calculator ."
             }
         }
-        stage("Docker Push"){
-            steps {
-                sh "docker push princewillingoo/calculator"
-            }
-        }
-        stage("Deploy to staging") {
-            steps {
-                sh "docker run -d --rm -p 8765:8080 --name calculator princewillingoo/calculator"
-            }
-        }
     }
 }
 
